@@ -1,4 +1,5 @@
 #import {Task} from '../app/Task.ts' 
+from flask_sqlalchemy import sqlalchemy
 from sqlalchemy import Column, String, Integer, DateTime
 
 from datetime import datetime
