@@ -1,6 +1,5 @@
 #import {Task} from '../app/Task.ts' 
-from flask_sqlalchemy import sqlalchemy
-from sqlalchemy import Column, String, Integer, DateTime
+from sqlalchemy import Boolean, Column, String, Integer, DateTime
 
 from datetime import datetime
 from .entity import Entity, Base
@@ -12,11 +11,11 @@ class Task(Entity, Base):
     title = Column(String)
     day = Column(DateTime)
     description = Column(String)
-    reminder = True
+    reminder = Boolean(True)
 
 
-    def __init__(self, title, day, description, created_by, reminder):
-        Entity.__init__(self, created_by)
+    def __init__(self, title, day, description, reminder=True):
+        Entity.__init__(self )
         self.title = title
         self.day = day
         self.description = description
