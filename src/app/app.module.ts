@@ -12,11 +12,12 @@ import { ButtonComponent } from './components/button/button.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './component/add-task/add-task.component';
+import { RouterModule, Routes } from '@angular/router';
 
-// const appRoutes: Routes = [
-//   { path: '', component: TasksComponent },
-//   { path: 'about', component: AboutComponent },
-// ];
+const appRoutes: Routes = [
+  { path: '', component: TasksComponent },
+  //{ path: 'about', component: AboutComponent },
+];
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddTaskComponent } from './component/add-task/add-task.component';
     BrowserModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([])
   
   ],
   providers: [],
