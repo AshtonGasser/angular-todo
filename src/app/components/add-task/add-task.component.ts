@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 import { Task } from '../../Task';
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -22,27 +23,30 @@ export class AddTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  ngOnDestroy() {
-    // Unsubscribe to ensure no memory leaks
-    this.subscription.unsubscribe();
-}
+  
+   ngOnDestroy() {
+        // Unsubscribe to ensure no memory leaks
+        this.subscription.unsubscribe();
+    }
 
   onSubmit() {
     if (!this.text) {
       alert('Please add a task!');
       return;
-    }
-    const newTask: Task = {
-      text: this.text,
+    };
+
+    const newTask: Task {
+      text: this:text,
       day: this.day,
       reminder: this.reminder,
-    };
+    }
 
     this.onAddTask.emit(newTask);
 
     this.text = '';
     this.day = '';
     this.reminder = false;
+
+    
   }
 }
