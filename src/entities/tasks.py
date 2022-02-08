@@ -8,15 +8,15 @@ from .entity import Entity, Base
 class Task(Entity, Base):
     __tablename__ = 'tasks'
     id = Column(Integer, primary_key=True)
-    title = Column(String)
+    text = Column(String)
     day = Column(DateTime)
     description = Column(String)
     reminder = Boolean(True)
 
 
-    def __init__(self, title, day, description, reminder=True):
+    def __init__(self, text, day, description, reminder=True):
         Entity.__init__(self )
-        self.title = title
+        self.text = text
         self.day = day
         self.description = description
         self.reminder = reminder

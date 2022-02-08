@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 db_url = 'localhost:5432'
 db_name = 'tasks'
 db_user = 'ashtongasser'
-db_password = '0NLIN3-ex4m'
+db_password = '0NLIN3-task'
 engine = create_engine(f'postgresql://{db_user}:{db_password}@{db_url}/{db_name}')
 Session = sessionmaker(bind=engine)
 
